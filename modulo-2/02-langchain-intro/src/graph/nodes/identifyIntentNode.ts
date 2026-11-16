@@ -1,4 +1,4 @@
-import { type GraphState } from "../graph";
+import { type GraphState } from "../graph.ts";
 
 export function identifyIntent(state: GraphState): GraphState {
   const input = state.messages.at(-1)?.text ?? "";
@@ -6,7 +6,7 @@ export function identifyIntent(state: GraphState): GraphState {
 
   let command: GraphState["command"] = "unkown";
 
-  if (inputLower.includes("uppper")) {
+  if (inputLower.includes("upper")) {
     command = "uppercase";
   } else if (inputLower.includes("lower")) {
     command = "lowercase";
