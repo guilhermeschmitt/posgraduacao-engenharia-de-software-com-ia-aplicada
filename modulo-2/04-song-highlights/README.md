@@ -95,10 +95,13 @@ await graph.invoke(
 
 ## Setup
 
-1. **Install dependencies**:
+1. **Install dependencies** (Node.js version in `.nvmrc`, >= 24.10):
    ```bash
-   npm install
+   npm ci
    ```
+   `npm ci` installs exactly the versions in `package-lock.json`. All dependencies
+   (including the LangGraph CLI) are pinned to exact versions so the project keeps
+   working regardless of newer releases.
 
 2. **Configure environment** (`.env`):
    ```bash
@@ -116,6 +119,11 @@ await graph.invoke(
 4. **Run tests**:
    ```bash
    npm test
+   ```
+
+5. **Run the LangGraph dev server** (API at http://localhost:2024 + LangGraph Studio):
+   ```bash
+   npm run langgraph:serve
    ```
 
 ## Example Conversation
